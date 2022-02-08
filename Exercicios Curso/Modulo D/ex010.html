@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body{
+            background-color: gray;
+            font-size: 20px;
+            font: 20px normal Arial;
+        }
+        p{
+            font-size: 20px;
+           
+        }
+        #bu{
+            display:flex; /* facilitar na criaçao de colunas varias funcionalidades*/
+            align-items: center;
+
+         
+        }
+        #bu button{
+            height: 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+        input{
+            border-radius: 8px;
+            border: none;
+            
+        }
+        #pa{
+            font-size: 25px;
+            
+        }
+        #titu{
+            font-size: 25px;
+            margin-top: 60px;
+            
+        }
+        #pa2{
+         text-align: justify;
+         width: 500px;
+        }
+        #total{
+            margin-left: 40px;
+        }
+        #txtvel{
+            margin:0 1rem;
+        }
+    
+        
+           
+
+    </style>
+
+
+</head>
+<body>
+    <div id="total">
+    
+
+    <h1>Sistemas de Multa!</h1>
+    <div id="bu">
+    <p id="pa3">Velocidade do carro</p> 
+    <input type="number" name="txtvel" id="txtvel">
+     <span>Km/h</span>
+    <button type="button" onclick="calcular()">Verificar</button> 
+    </div>
+     <div id="res"></div>
+     <h1 id="titu">HISTÓRIA DO DETRAN</h1>
+     <p id="pa"><strong>Introdução</strong></p>
+     <p id="pa2">A construção da esplêndida Avenida Central, na cidade do Rio de Janeiro, foi o sinal mais evidente de que o Brasil estava de fato entrando no século XX. O ano era o de 1905. Pelo amplo bulevar de 2 km de comprimento e 33 metros de largura circulavam os automóveis que, naquele momento, davam ao país ares de progresso, riqueza e modernidade. E, aos otimistas, a certeza de que os problemas de tráfego de gente e veículos estavam solucionados até o fim dos tempos. Já os pessimistas... Bem, esses achavam que, se a cidade continuasse crescendo no mesmo ritmo, em breve esse bulevar seria um verdadeiro inferno, impossível de ser atravessado com tranquilidade... E eles tinham razão!
+
+        Até então, as vias de mais movimento eram a Avenida do Mangue e a Rua Senador Euzébio, hoje, respectivamente, Francisco Bicalho e Presidente Vargas. Naquela época, ninguém dirigia a mais de 20 km por hora; não havia congestionamento de trânsito mas, em compensação, o número de veículos não chegava a 1% do que é hoje, quando a frota no estado totalizava 3.742.489 veículos. E os congestionamentos já são rotina na vida de qualquer cidadão e - sem querer nos juntar ao bloco dos pessimistas - não há guarda de trânsito que dê jeito.
+        
+        Pelas ruas da cidade crescia o número de veículos que precisavam de registros e seus condutores, de habilitação. Até 1924, o controle de toda a frota ficava por conta da Inspectoria de Vehículos, subordinada ao Departamento de Polícia. Mas o crescimento da cidade exigia mudanças. Surgiu, então, a Inspectoria de Tráfego, responsável por todo e qualquer veículo que circulasse pelo Rio de Janeiro, até mesmo bicicletas, que precisavam de licenças de emplacamento como qualquer outro veículo. Essas licenças eram pagas ao Departamento de Rendas e Licenças da Prefeitura do Distrito Federal, uma vez que a capital do país era sediada no Rio de Janeiro até o início da década de 60.
+        
+        Subordinada à Secretaria de Justiça e Segurança Pública, a Delegacia de Trânsito Público, antecessora do atual Detran, só surgiria décadas depois, com a criação do Código Nacional do Trânsito, em 1966.</p>
+      </div>
+     <script>
+         function calcular(){
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></P>`
+                if(vel > 80){
+                    res.innerHTML += '<p>Você está <strong>MULTADO!!</strong></p>'
+                }
+            res.innerHTML += '<p>Diriga sempre com Segurança!!</p>'
+
+         }
+
+
+     </script>
+
+</body>
+</html>

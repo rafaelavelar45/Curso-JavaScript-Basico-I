@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <title>AzulBr</title>
+    <style>
+        body {
+            background-color: rgb(65, 160, 238);
+            font: 20px normal Arial;
+        }
+
+        input {
+            width: 120px;
+            border: none;
+            /* tirar bordas */
+            border-radius: 5px;
+            /* arredondar cantos */
+            
+        }
+
+        p {
+            font-size: 23px;
+            /* aumentar tamanho da font */
+            color:rgb(56, 56, 209)
+        }
+
+        h1 {
+            font-size: 40px;
+            color: darkblue;
+            margin-top: 100px;
+        }
+
+        .txt {
+            width: 50%;
+            text-align: justify;
+            margin-top: 100px;
+        }
+        
+        .ti{
+            font-size:40px;
+
+           
+        }
+        #total{
+            margin-left: 40px;/* colocar magem esquerco */
+        }
+        #but{
+            border-radius: 5px;  
+            border: none; 
+            cursor: pointer;
+              
+        }
+        .modal{
+            height: 500px; /* altura*/
+            width: 600px; /* largura*/
+            position: absolute; /* posiçao absoluta */
+            top: 50%; /* posiçao do objeto em relaçao ao topo */
+            left: 50%; /* posiçao do objeito em relaçao a esquerda */
+            display: none; /*escondem o elemento */
+            transform: translate(-50%,-50%);/* reposiciona um elemento na direção horizontal e/ou vertical.*/
+            background-color: mintcream;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /*é utilizado para adicionar efeitos de sombra em volta de um elemento.*/
+            backdrop-filter: blur(5px);/* permite que você aplique efeitos gráficos, como desfoque ou mudança de cores, na área ao fundo de um elemento.*/
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+        .close{
+            border: none;
+            background-color: red;
+            padding: 10px;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            transform: translate(-10px,-10px);
+        
+        }
+        .resposta1{
+            display: flex;
+            align-items:center ;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+
+    
+    </style>
+    <script>
+        $(function () {
+            var availableTags = [
+                "Argentina",
+                "Bolívia",
+                "Brasil",
+                "Chile",
+                "Colômbia",
+                "Equador",
+                "Guiana",
+                "França",
+                "Guiana Francesa",
+                "Paragua",
+                "Peru",
+                "Surinam",
+                "Uruguai",
+                "Venezuel",
+            ];
+            $("#txt1").autocomplete({
+                source: availableTags
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="modal"> 
+        <button class="close" onclick="Close()">x</button>
+        <div class="resposta1">
+        <div id="resposta"></div>
+        </div>
+    </div>
+    <div id="total"><h1>Sistema de Nacionalidade Brasileiro ou Estrangeiro</h1>
+    <p><strong>Digite o seu Pais</strong></p> <input type="text" name="txt1" id="txt1"> </br>
+    <button id="but" type="button" onclick="Pesquisar()">Verificar</button>
+    <div id="res"></div>
+        <h1 class="ti">História e Origem</h1>
+        <p class="txt">Seja bem-vindo a bordo da companhia que tem orgulho em servir o Brasil.
+
+            Com a Azul você está sempre onde merece: Lá em cima. Isto porque aqui nós fazemos de tudo para você se
+            sentir especial. As características e diferenciais de nosso serviço e atendimento são resultado do trabalho
+            de um time que pensa o tempo todo em suas necessidades.
+
+            Começa pelos nossos aviões Embraer 195, 190 e Airbus A320, que oferecem mais espaço para as pernas; passa
+            pelo serviço de bordo que inclui doze tipos de snacks dos quais você pode servir-se à vontade; está no
+            entretenimento a bordo com monitores individuais; nas tarifas competitivas; em nossa malha abrangente que
+            inclui cidades do interior; nos voos sem escalas e em um programa de relacionamento inovador: o TudoAzul.
+
+            Somos a companhia aérea que mais cresceu no Brasil desde que iniciamos nossas operações em dezembro de 2008,
+            contando atualmente com a maior malha aérea do país atendendo mais de 100 destinos com 792 decolagens
+            diárias. Além disso, expandimos nossas operações com voos diretos para os Estados Unidos e Portugal,
+            operando com as aeronaves A330 equipadas com o mais tecnológico sistema de entretenimento a bordo, refeições
+            feitas especialmente para as classes Business e Economy. Além disso, mais rotas internacionais são operadas
+            pela Azul: Buenos Aires, Punta Del Este, Montevidéu e Caiena.
+
+            Hoje, com aproximadamente um terço do mercado brasileiro de aviação civil em termos de decolagens, a Azul
+            consolida-se como a terceira maior companhia aérea do País.
+
+            A clara visão de negócio, traduzida no contínuo crescimento de sua frota, malha de destinos, linhas operadas
+            e participação de mercado, faz da Azul uma realidade de notável sucesso. Neste período, a empresa atingiu
+            recordes mundiais e conquistou alguns dos melhores índices do setor de aviação brasileira.
+
+            A Azul supera a cada mês os números de crescimento.
+
+            O papel da Azul é estimular o tráfego aéreo e dinamizar a economia brasileira por meio de uma equação tão
+            simples de entender quanto difícil de imitar: preços baixos com alta qualidade de serviços. A qualidade de
+            seus serviços já foi atestada por inúmeros prêmios, nacionais e internacionais.</p>
+    </div>
+    <script>
+        var tx = window.document.getElementById('txt1')
+        var res = window.document.getElementById('resposta')
+        var modal = document.querySelector(".modal")
+
+        function Pesquisar() {
+            res.innerHTML = ""
+            modal.style.display = "block"
+            res.innerHTML += `Seu pais de Registro é <strong>${tx.value}</strong></br>`
+            var val = (txt1.value)
+            if (val == 'Brasil') {
+                res.innerHTML += `Brasileiro!!`
+            }   
+        
+        else {
+            res.innerHTML += `<strong>Estrangeiro!!</strong>`
+           }
+          
+        }
+        function Close() {
+            modal.style.display = "none"
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governo.gov</title>
+    <style>
+        body{
+            
+            font-size: 25px;
+            background-color: rgb(12, 87, 12);
+         }
+         #total{
+            margin-left: 40px;
+            margin-top: 50px;
+         }
+         #but{
+            margin-top: 10px;
+            border-radius:5px;
+            border: none;
+            cursor: pointer;
+         }
+         #resposta{
+            margin-left: 9px;
+           margin-top: 20px;
+           font-size: 20px;
+         }
+         #txt1{
+           border-radius:15px;
+           border: none;
+         }
+         
+         p{
+            font-size: 25px;
+         }
+
+        
+     
+
+     
+
+    </style>
+
+    <div id="total">    
+        <h1>Sistemas de Voto Eleitoral</h1>
+        <p><strong>Digite sua idade:</strong></p>
+            <input type="number" name="txt" id="txt1" placeholder= "idade"> </br> 
+            <button id="but" type="button" onclick="Pesquisar()" >Verificar</button>
+    </div>
+    <div id="resposta"></div>
+
+
+</head>
+<body>
+    <script>
+        var idade = document.getElementById("txt1")
+        var res = document.getElementById("resposta")
+         
+        function Pesquisar(){
+            
+            var val = Number(txt1.value)
+            
+            
+            res.innerHTML = "" 
+            
+    
+
+         if(val >= 16 && val <= 17 || val > 66  ){
+            
+            res.innerHTML = "Seu Voto é <strong>Opcional</strong>!!</br></br>"
+        
+         } else if(val >= 18 && val <= 66){
+               
+            res.innerHTML = "Seu voto e <strong>obrigatorio!!</strong></br></br>"
+           
+         }else  {
+                
+            res.innerHTML = "Você <strong>Não Vota!!</strong></br></br>" }
+               
+            res.innerHTML += " Voto é <strong>Sigiloso!!</strong>"
+           
+            
+        }
+
+        
+    
+        
+      
+       
+    
+
+    
+</script>
+    
+</body>
+</html>
